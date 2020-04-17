@@ -1,3 +1,8 @@
 {
-    "name": "Jenkins_Pipeline_With_Extended_ChoiceParam"
+    "name": "Jenkins_Pipeline_With_Extended_ChoiceParam",
+    "params": {
+        "ParamEnv": "PROD",
+        "ParamVersion": "",
+        "someName": ""
+    }
 }

@@ -1,6 +1,5 @@
- def t_color="blue"
 
- json_script='''
+json_script='''
 import org.boon.Boon;
 
 def jsonEditorOptions = Boon.fromJson(/{
