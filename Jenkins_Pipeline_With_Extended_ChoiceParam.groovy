@@ -1,3 +1,7 @@
+import groovy.json.*
+
+import groovy.json.JsonSlurper
+
 
 json_script='''
 import org.boon.Boon;
@@ -104,7 +108,7 @@ def jsonEditorOptions = Boon.fromJson(/{
 },
        startval: [
   {
-    "name": "agent",
+    "name": "Yosi",
     "environments": [
       {
         "name": "dev1",
@@ -314,3 +318,36 @@ return jsonEditorOptions;
         )
     ])
 ]) 
+
+
+
+
+
+node("master")
+{
+
+   stage("One")
+   {
+         //echo "hi One" + params["someName"]
+		 //def test = params
+		 
+		 def str = params["someName"]
+
+
+		 def slurper = new JsonSlurper().parseText(str)
+		 println slurper.environments[0]
+		 println "Hi"
+		 println  slurper.environments[1].servers[1].get(0).properties[0]
+		 
+
+
+
+   }
+   stage("Two")
+   {
+	   	  echo "Hi Two"
+			
+   }
+
+
+}
